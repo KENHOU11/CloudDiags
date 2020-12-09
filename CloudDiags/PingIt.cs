@@ -12,10 +12,9 @@ namespace CloudDiags.Controllers
 
         public PingIt()
         {
-
+              
         }
 
-        // public static void Main(string[] args)
         public PingIt(string anAddress)
         {
             Ping pingSender = new Ping();
