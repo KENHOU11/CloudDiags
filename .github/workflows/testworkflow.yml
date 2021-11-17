@@ -13,7 +13,7 @@ jobs:
         - name: Step one
           uses: actions/checkout@v2
         - name: Step two
-          run: env | sort
+          run: date
   job2:
     name: Second Job
     runs-on: windows-latest
@@ -29,5 +29,14 @@ jobs:
         - name: Step one
           uses: actions/checkout@v2
         - name: Step two
-          run: "Get-ChildItem Env: | Sort-Object Name"            
+          run: date
+  job4:
+    name: Depends Job
+    needs: [job1, job2, job3]
+    runs-on: nmacos-latest
+    steps: 
+        - name: Step one
+          uses: actions/checkout@v2
+        - name: Step two
+          run: date          
   
