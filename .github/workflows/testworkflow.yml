@@ -24,7 +24,7 @@ jobs:
           run: "Get-ChildItem Env: | Sort-Object Name"  
   job3:
     name: Third Job
-    runs-on: nmacos-latest
+    runs-on: windows-latest
     steps: 
         - name: Step one
           uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
   job4:
     name: Depends Job
     needs: [job1, job2, job3]
-    runs-on: nmacos-latest
+    runs-on: windows-latest
     steps: 
         - name: Step one
           uses: actions/checkout@v2
